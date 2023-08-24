@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 # A FreeCAD postprocessor for the Snapmaker 2.0 CNC function
 
-import os
-import re
-import argparse
-import shlex
-from datetime import datetime
-import base64
-import tempfile
 
 try:
+    from datetime import datetime
+    import argparse
+    import shlex
     import FreeCAD
+    from FreeCAD import Units
     import Path
-    import PathScripts.PathUtil as PathUtil
-    import PathScripts.PostUtils as PostUtils
-    import PathScripts.PathJob as PathJob
+    import Path.Base.Util as PathUtil
+    import Path.Post.Utils as PostUtils
+    import PathScripts.PathUtils as PathUtils
+    import os
+    import re
+    import base64
+    import tempfile
 except ImportError:
     print('FreeCAD modules could not be imported. Only help is available')
     FreeCAD = None
@@ -712,6 +713,7 @@ class Postprocessor:
         if self.conf.boundaries_check:
             if self.checkBoundaries():
                 FreeCAD.Console.PrintLog('Boundary check passed. Be cautious, it is still an experimental feature.')
+            else:rimental feature.')
             else:
                 FreeCAD.Console.PrintWarning('Boundary check failed, check logs for extra information.')
 
