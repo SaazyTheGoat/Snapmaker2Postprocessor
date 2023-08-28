@@ -20,10 +20,9 @@ Refer to [FreeCAD documentation](https://wiki.freecadweb.org/Path_Post) on how t
 
 
 ## Limitations
-This postprocessor has been tested on FreeCAD 0.20 shipped with python3.10.
-Generated GCODE has only been tested on a Snapmaker 2 A350. It *should* work on any other Snapmaker 2.0 (A150, A250, A250T, A350T), and *may* work on other Snapamker machines, but with no warranty.
-If you encounter any bug, please open an issue. 
+This postprocessor has been tested on FreeCAD v0.21. Generated GCODE has been tested on a SnapMaker 2 A350 / A250. It *should* work on any other Snapmaker 2.0 (A150, A250, A250T, A350T), and *may* work on other Snapamker machines, but with no warranty. If you encounter any bug, please open an issue. 
 
+This postprocessor fails to process paths to gcode under FreeCAD v0.21 that utilize the dressup tag functionality. It may work with other dressup options but these have not been tested at this point. Processing is successful on normal paths.
 
 ## Credits
 Parts of this postprocessor have been inspired by the Marlin postprocessor shipped along with [FreeCAD](https://www.freecad.org).
